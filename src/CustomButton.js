@@ -1,7 +1,19 @@
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import React from 'react';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const CustomButton = ({h, w, r, color, name, onClick, fs, txco, icon}) => {
+const CustomButton = ({
+  h,
+  w,
+  r,
+  color,
+  name,
+  onClick,
+  fs,
+  txco,
+  icon,
+  vector,
+}) => {
   return (
     <TouchableOpacity
       onPress={() => {
@@ -16,10 +28,11 @@ const CustomButton = ({h, w, r, color, name, onClick, fs, txco, icon}) => {
         justifyContent: 'center',
         flexDirection: 'row',
       }}>
-      {icon && <Image source={icon} style={{height: 25, width: 25}} />}
-      <Text style={{color: txco, fontSize: fs}}> {name} </Text>
+      {vector && <Ionicons name={vector} size={40} color="yellow" />}
     </TouchableOpacity>
   );
 };
 
 export default CustomButton;
+
+const styles = StyleSheet.create({});
