@@ -11,8 +11,10 @@ const CustomButton = ({
   onClick,
   fs,
   txco,
+  fw,
   icon,
   vector,
+  center,
 }) => {
   return (
     <TouchableOpacity
@@ -27,7 +29,9 @@ const CustomButton = ({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
+        alignSelf: center,
       }}>
+      <Text style={{fontSize: fs, color: txco, fontWeight: fw}}> {name} </Text>
       {vector && <Ionicons name={vector} size={40} color="yellow" />}
     </TouchableOpacity>
   );
